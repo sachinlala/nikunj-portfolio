@@ -313,6 +313,64 @@
   }
 
   // ============================================
+  // Load Profile Data from JSON
+  // ============================================
+  async function loadProfileData() {
+    try {
+      const response = await fetch('data/profile.json');
+      const profileData = await response.json();
+      
+      // Update header information
+      const logoName = document.querySelector('.logo h1');
+      const logoTagline = document.querySelector('.logo p');
+      
+      if (logoName && profileData.personal.name) {
+        logoName.textContent = profileData.personal.name;
+      }
+      
+      if (logoTagline && profileData.personal.tagline) {
+        logoTagline.textContent = profileData.personal.tagline;
+      }
+      
+      // Update hero section
+      const heroTitle = document.querySelector('.hero-text h2');
+      const heroDescription = document.querySelector('.hero-description');
+      const profileImg = document.querySelector('.profile-img');
+      
+      if (heroTitle && profileData.personal.name) {
+        heroTitle.innerHTML = `Hi, I'm ${profileData.personal.name.split(' ')[0]}! 👋`;
+      }
+      
+      if (heroDescription && profileData.personal.bio) {
+        heroDescription.textContent = profileData.personal.bio;
+      }
+      
+      if (profileImg && profileData.personal.avatar) {
+        profileImg.src = profileData.personal.avatar;
+        profileImg.alt = `${profileData.personal.name} - Student Developer`;
+      }
+      
+      // Update contact links
+      const emailLink = document.querySelector('a[href^="mailto:"]');
+      const githubLink = document.querySelector('a[href*="github"]');
+      
+      if (emailLink && profileData.personal.email) {
+        emailLink.href = `mailto:${profileData.personal.email}`;
+      }
+      
+      if (githubLink && profileData.personal.github) {
+        githubLink.href = profileData.personal.github;
+      }
+      
+      console.log('Profile data loaded successfully!');
+      
+    } catch (error) {
+      console.warn('Could not load profile data:', error);
+      // Continue with static content if JSON fails to load
+    }
+  }
+
+  // ============================================
   // Initialize Everything
   // ============================================
   function init() {
@@ -322,6 +380,9 @@
       return;
     }
 
+    // Load profile data first
+    loadProfileData();
+    
     // Initialize all functionality
     initMobileNavigation();
     initSmoothScrolling();
