@@ -2,7 +2,7 @@
   "personal": {
     "name": "Nikunj Arora",
     "tagline": "Student • A passionate footballer • A curious learner",
-    "bio": "I'm an 8th grade student with a passion for coding, mathematics, and science. I love building things with technology and exploring how the digital world works. Welcome to my portfolio where I share my projects and journey in learning!",
+    "bio": "I'm Nikunj Arora, a curious learner and an aspiring innovator, currently studying in Grade 8 at Deens Academy under the CBSE curriculum. While academics are my foundation, I am equally passionate about football, which drives my discipline, teamwork, and resilience.\n\nBeyond the field and classroom, I have a growing interest in Artificial Intelligence, Business, and Creation. I enjoy how technology and entrepreneurship can shape the future, and I am eager to build knowledge that will help me combine these passions in meaningful ways.",
     "email": "nikunj@example.com",
     "github": "https://github.com/sachinlala",
     "location": "Student",
@@ -93,40 +93,40 @@
   ],
   "interests": [
     {
+      "id": "ai",
+      "title": "Artificial Intelligence",
+      "description": "Fascinated by AI and machine learning - exploring how technology can solve complex problems.",
+      "icon": "🤖"
+    },
+    {
+      "id": "business",
+      "title": "Business & Entrepreneurship",
+      "description": "Learning about business concepts and how entrepreneurship can drive innovation and change.",
+      "icon": "💼"
+    },
+    {
+      "id": "creation",
+      "title": "Creation & Innovation",
+      "description": "Love building and creating things - from LEGO projects to machines .",
+      "icon": "🚀"
+    },
+    {
+      "id": "football",
+      "title": "Football",
+      "description": "Passionate about football - playing professionally and challenging myself to perform better after every game.",
+      "icon": "⚽"
+    },
+    {
       "id": "coding",
       "title": "Coding & Programming",
       "description": "Learning different programming languages and building web applications and games.",
       "icon": "💻"
     },
     {
-      "id": "robotics",
-      "title": "Robotics & Electronics",
-      "description": "Building robots and exploring how electronic components work together.",
-      "icon": "🤖"
-    },
-    {
-      "id": "chess",
-      "title": "Chess",
-      "description": "Strategic thinking and problem-solving through the classic game of chess.",
-      "icon": "♟️"
-    },
-    {
-      "id": "football",
-      "title": "Football",
-      "description": "Passionate about football - playing with friends and staying active through the beautiful game.",
-      "icon": "⚽"
-    },
-    {
       "id": "reading",
       "title": "Reading & Learning",
       "description": "Reading books about science, technology, and exploring new topics online.",
       "icon": "📚"
-    },
-    {
-      "id": "science",
-      "title": "Science Experiments",
-      "description": "Conducting fun experiments and learning how things work in the natural world.",
-      "icon": "🔬"
     }
   ],
   "skills": [
