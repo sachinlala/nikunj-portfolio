@@ -1,0 +1,38 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "files.associations": {
+    "*.css": "css",
+    "*.html": "html",
+    "*.js": "javascript",
+    "*.json": "json",
+    "*.md": "markdown"
+  },
+  "html.format.enable": true,
+  "css.format.enable": true,
+  "json.format.enable": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.rulers": [100],
+  "editor.wordWrap": "bounded",
+  "editor.wordWrapColumn": 100,
+  "emmet.includeLanguages": {
+    "html": "html",
+    "css": "css"
+  },
+  "live-server.settings.donotShowInfoMsg": true,
+  "live-server.settings.donotVerifyTags": true,
+  "live-server.settings.port": 5173,
+  "live-server.settings.root": "/",
+  "html.validate.styles": true,
+  "html.validate.scripts": true,
+  "css.validate": true,
+  "javascript.validate.enable": true
+}
