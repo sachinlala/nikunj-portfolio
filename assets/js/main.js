@@ -337,8 +337,8 @@
       const heroDescription = document.querySelector('.hero-description');
       const profileImg = document.querySelector('.profile-img');
       
-      if (heroTitle) {
-        heroTitle.innerHTML = 'About Me';
+      if (heroTitle && profileData.personal.name) {
+        heroTitle.innerHTML = `Hi, I'm ${profileData.personal.name.split(' ')[0]}! 👋`;
       }
       
       if (heroDescription && profileData.personal.bio) {
@@ -355,6 +355,8 @@
       // Update interests section
       const interestsGrid = document.querySelector('.interests-grid');
       if (interestsGrid && profileData.interests) {
+        console.log('Updating interests section with', profileData.interests.length, 'interests');
+        
         // Clear existing interests
         interestsGrid.innerHTML = '';
         
@@ -369,6 +371,10 @@
           `;
           interestsGrid.appendChild(interestCard);
         });
+        
+        console.log('Interests section updated successfully!');
+      } else {
+        console.warn('Could not update interests:', !interestsGrid ? 'Grid not found' : 'No interests data');
       }
       
       // Update contact links
