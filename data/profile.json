@@ -1,7 +1,7 @@
 {
   "personal": {
     "name": "Nikunj Arora",
-    "tagline": "8th Grade Student • Curious Coder & Maker",
+    "tagline": "Student • A passionate footballer • A curious learner",
     "bio": "I'm an 8th grade student with a passion for coding, mathematics, and science. I love building things with technology and exploring how the digital world works. Welcome to my portfolio where I share my projects and journey in learning!",
     "email": "nikunj@example.com",
     "github": "https://github.com/sachinlala",
@@ -111,10 +111,10 @@
       "icon": "♟️"
     },
     {
-      "id": "basketball",
-      "title": "Basketball",
-      "description": "Playing basketball with friends and staying active through sports.",
-      "icon": "🏀"
+      "id": "football",
+      "title": "Football",
+      "description": "Passionate about football - playing with friends and staying active through the beautiful game.",
+      "icon": "⚽"
     },
     {
       "id": "reading",
