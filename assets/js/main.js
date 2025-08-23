@@ -342,7 +342,9 @@
       }
       
       if (heroDescription && profileData.personal.bio) {
-        heroDescription.textContent = profileData.personal.bio;
+        // Convert \n characters to HTML line breaks
+        const bioWithBreaks = profileData.personal.bio.replace(/\n/g, '<br>');
+        heroDescription.innerHTML = bioWithBreaks;
       }
       
       if (profileImg && profileData.personal.avatar) {
