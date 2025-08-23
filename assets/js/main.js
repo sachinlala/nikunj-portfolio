@@ -352,6 +352,25 @@
         profileImg.alt = `${profileData.personal.name} - Student Developer`;
       }
       
+      // Update interests section
+      const interestsGrid = document.querySelector('.interests-grid');
+      if (interestsGrid && profileData.interests) {
+        // Clear existing interests
+        interestsGrid.innerHTML = '';
+        
+        // Add new interests from JSON
+        profileData.interests.forEach(function(interest) {
+          const interestCard = document.createElement('div');
+          interestCard.className = 'interest-card';
+          interestCard.innerHTML = `
+            <div class="interest-icon">${interest.icon}</div>
+            <h3>${interest.title}</h3>
+            <p>${interest.description}</p>
+          `;
+          interestsGrid.appendChild(interestCard);
+        });
+      }
+      
       // Update contact links
       const emailLink = document.querySelector('a[href^="mailto:"]');
       const githubLink = document.querySelector('a[href*="github"]');
