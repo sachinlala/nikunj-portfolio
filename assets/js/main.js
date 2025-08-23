@@ -337,8 +337,8 @@
       const heroDescription = document.querySelector('.hero-description');
       const profileImg = document.querySelector('.profile-img');
       
-      if (heroTitle && profileData.personal.name) {
-        heroTitle.innerHTML = `Hi, I'm ${profileData.personal.name.split(' ')[0]}! 👋`;
+      if (heroTitle) {
+        heroTitle.innerHTML = 'About Me';
       }
       
       if (heroDescription && profileData.personal.bio) {
