@@ -1,0 +1,155 @@
+{
+  "personal": {
+    "name": "Nikunj Arora",
+    "tagline": "8th Grade Student • Curious Coder & Maker",
+    "bio": "I'm an 8th grade student with a passion for coding, mathematics, and science. I love building things with technology and exploring how the digital world works. Welcome to my portfolio where I share my projects and journey in learning!",
+    "email": "nikunj@example.com",
+    "github": "https://github.com/sachinlala",
+    "location": "Student",
+    "avatar": "assets/images/profile-avatar.svg"
+  },
+  "projects": [
+    {
+      "id": "weather-app",
+      "title": "Weather Dashboard",
+      "description": "A responsive web app that displays current weather and forecasts using a public API.",
+      "image": "assets/images/weather-app.jpg",
+      "tags": ["JavaScript", "HTML", "CSS", "API"],
+      "links": {
+        "demo": "#",
+        "github": "#"
+      },
+      "featured": true
+    },
+    {
+      "id": "math-quiz",
+      "title": "Math Quiz Challenge",
+      "description": "An interactive quiz game with different difficulty levels and score tracking.",
+      "image": "assets/images/math-quiz.jpg",
+      "tags": ["JavaScript", "HTML", "CSS", "Game Dev"],
+      "links": {
+        "demo": "#",
+        "github": "#"
+      },
+      "featured": true
+    },
+    {
+      "id": "blog-site",
+      "title": "Learning Journal Blog",
+      "description": "A simple blog where I document my coding journey and share what I learn.",
+      "image": "assets/images/blog-site.jpg",
+      "tags": ["HTML", "CSS", "JavaScript", "Writing"],
+      "links": {
+        "demo": "#",
+        "github": "#"
+      },
+      "featured": true
+    },
+    {
+      "id": "robotics-project",
+      "title": "Line Follower Robot",
+      "description": "Built with my robotics club - a robot that follows black lines using sensors and Arduino.",
+      "image": "assets/images/robotics-project.jpg",
+      "tags": ["Arduino", "C++", "Robotics", "Hardware"],
+      "links": {
+        "demo": "#"
+      },
+      "featured": true
+    }
+  ],
+  "achievements": [
+    {
+      "id": "science-fair",
+      "title": "Science Fair Finalist",
+      "description": "Selected as a finalist in our school's science fair for my project on renewable energy sources.",
+      "icon": "🏆",
+      "date": "2024",
+      "category": "Academic"
+    },
+    {
+      "id": "python-certificate",
+      "title": "Python Fundamentals Certificate",
+      "description": "Completed an online Python programming course covering basics, data structures, and simple projects.",
+      "icon": "🐍",
+      "date": "2024",
+      "category": "Learning"
+    },
+    {
+      "id": "math-olympiad",
+      "title": "Math Olympiad - School Level",
+      "description": "Earned distinction in the school-level Mathematics Olympiad competition.",
+      "icon": "🥇",
+      "date": "2024",
+      "category": "Competition"
+    },
+    {
+      "id": "robotics-club",
+      "title": "Robotics Club Member",
+      "description": "Active member of school robotics club, participating in competitions and building projects.",
+      "icon": "🤖",
+      "date": "2023-2024",
+      "category": "Extracurricular"
+    }
+  ],
+  "interests": [
+    {
+      "id": "coding",
+      "title": "Coding & Programming",
+      "description": "Learning different programming languages and building web applications and games.",
+      "icon": "💻"
+    },
+    {
+      "id": "robotics",
+      "title": "Robotics & Electronics",
+      "description": "Building robots and exploring how electronic components work together.",
+      "icon": "🤖"
+    },
+    {
+      "id": "chess",
+      "title": "Chess",
+      "description": "Strategic thinking and problem-solving through the classic game of chess.",
+      "icon": "♟️"
+    },
+    {
+      "id": "basketball",
+      "title": "Basketball",
+      "description": "Playing basketball with friends and staying active through sports.",
+      "icon": "🏀"
+    },
+    {
+      "id": "reading",
+      "title": "Reading & Learning",
+      "description": "Reading books about science, technology, and exploring new topics online.",
+      "icon": "📚"
+    },
+    {
+      "id": "science",
+      "title": "Science Experiments",
+      "description": "Conducting fun experiments and learning how things work in the natural world.",
+      "icon": "🔬"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "items": ["JavaScript", "Python", "HTML", "CSS", "C++ (Arduino)"]
+    },
+    {
+      "category": "Tools & Technologies",
+      "items": ["Git", "VS Code", "Arduino IDE", "Web APIs", "Responsive Design"]
+    },
+    {
+      "category": "Interests",
+      "items": ["Web Development", "Game Development", "Robotics", "Data Visualization"]
+    }
+  ],
+  "social": {
+    "github": "https://github.com/sachinlala",
+    "email": "nikunj@example.com"
+  },
+  "meta": {
+    "version": "1.0.0",
+    "lastUpdated": "2024-08-23",
+    "description": "Portfolio data for Nikunj Arora - 8th grade student passionate about coding and technology"
+  }
+}

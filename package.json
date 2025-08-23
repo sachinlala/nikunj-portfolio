@@ -1,0 +1,18 @@
+{
+  "name": "nikunj-portfolio",
+  "version": "1.0.0",
+  "description": "Nikunj Arora's personal portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server --port=5173 --entry-file=index.html",
+    "format": "prettier -w .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["portfolio", "student", "website"],
+  "author": "Nikunj Arora",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "prettier": "^3.6.2"
+  }
+}
