@@ -93,40 +93,28 @@
   ],
   "interests": [
     {
-      "id": "ai",
-      "title": "Artificial Intelligence",
-      "description": "Fascinated by AI and machine learning - exploring how technology can solve complex problems.",
-      "icon": "🤖"
-    },
-    {
-      "id": "business",
-      "title": "Business & Entrepreneurship",
-      "description": "Learning about business concepts and how entrepreneurship can drive innovation and change.",
-      "icon": "💼"
-    },
-    {
-      "id": "creation",
-      "title": "Creation & Innovation",
-      "description": "Love building and creating things - from LEGO projects to machines .",
-      "icon": "🚀"
-    },
-    {
-      "id": "football",
-      "title": "Football",
-      "description": "Passionate about football - playing professionally and challenging myself to perform better after every game.",
+      "id": "sports",
+      "title": "Sports",
+      "description": "Passionate about various sports, especially football - staying active and competitive while building teamwork skills.",
       "icon": "⚽"
     },
     {
-      "id": "coding",
-      "title": "Coding & Programming",
-      "description": "Learning different programming languages and building web applications and games.",
-      "icon": "💻"
+      "id": "lego",
+      "title": "Lego",
+      "description": "Love building creative structures and complex models with Lego - combining imagination with engineering.",
+      "icon": "🧱"
     },
     {
-      "id": "reading",
-      "title": "Reading & Learning",
-      "description": "Reading books about science, technology, and exploring new topics online.",
-      "icon": "📚"
+      "id": "content-creation",
+      "title": "Content Creation",
+      "description": "Enjoy creating and sharing content - exploring different ways to express ideas and connect with others.",
+      "icon": "🎬"
+    },
+    {
+      "id": "gaming",
+      "title": "Gaming",
+      "description": "Playing various games for fun and strategy - enjoying both competitive and creative gaming experiences.",
+      "icon": "🎮"
     }
   ],
   "skills": [
