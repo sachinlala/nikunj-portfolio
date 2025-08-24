@@ -352,30 +352,45 @@
         profileImg.alt = `${profileData.personal.name} - Student Developer`;
       }
       
-      // Update interests section
+      // Update interests section - TEMPORARILY DISABLED TO FIX DISAPPEARING CONTENT
+      // We'll re-enable this once we fix the underlying issue
+      /*
       const interestsGrid = document.querySelector('.interests-grid');
-      if (interestsGrid && profileData.interests) {
+      if (interestsGrid && profileData.interests && profileData.interests.length > 0) {
         console.log('Updating interests section with', profileData.interests.length, 'interests');
         
-        // Clear existing interests
-        interestsGrid.innerHTML = '';
+        // Store original content as fallback
+        const originalContent = interestsGrid.innerHTML;
         
-        // Add new interests from JSON
-        profileData.interests.forEach(function(interest) {
-          const interestCard = document.createElement('div');
-          interestCard.className = 'interest-card';
-          interestCard.innerHTML = `
-            <div class="interest-icon">${interest.icon}</div>
-            <h3>${interest.title}</h3>
-            <p>${interest.description}</p>
-          `;
-          interestsGrid.appendChild(interestCard);
-        });
-        
-        console.log('Interests section updated successfully!');
+        try {
+          // Clear existing interests
+          interestsGrid.innerHTML = '';
+          
+          // Add new interests from JSON
+          profileData.interests.forEach(function(interest) {
+            const interestCard = document.createElement('div');
+            interestCard.className = 'interest-card';
+            interestCard.innerHTML = `
+              <div class="interest-icon">${interest.icon}</div>
+              <h3>${interest.title}</h3>
+              <p>${interest.description}</p>
+            `;
+            interestsGrid.appendChild(interestCard);
+          });
+          
+          console.log('Interests section updated successfully!');
+        } catch (error) {
+          console.error('Error updating interests section:', error);
+          // Restore original content if there's an error
+          interestsGrid.innerHTML = originalContent;
+        }
       } else {
         console.warn('Could not update interests:', !interestsGrid ? 'Grid not found' : 'No interests data');
+        // Keep original static content if no dynamic data
       }
+      */
+      
+      console.log('Dynamic interests loading temporarily disabled - using static HTML content');
       
       // Update contact links
       const emailLink = document.querySelector('a[href^="mailto:"]');
