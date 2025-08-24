@@ -509,8 +509,11 @@ p {
 
 .interests-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+  justify-items: center;
 }
 
 .interest-card {
@@ -521,6 +524,8 @@ p {
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-light);
   transition: var(--transition-normal);
+  width: 100%;
+  max-width: 280px;
 }
 
 .interest-card:hover {
@@ -675,8 +680,10 @@ p {
     --container-padding: var(--spacing-lg);
   }
   
+  /* Keep interests grid as 2x2 centered layout */
   .interests-grid {
-    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    gap: var(--spacing-xl);
   }
 }
 
@@ -757,6 +764,16 @@ p {
   .project-links,
   .hero-actions {
     flex-direction: column;
+  }
+  
+  /* Stack interests vertically on very small screens */
+  .interests-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+  
+  .interest-card {
+    max-width: 100%;
   }
 }
 
