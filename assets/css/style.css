@@ -84,6 +84,30 @@
   }
 }
 
+/* Explicit dark theme variables (overrides for JavaScript-controlled theme) */
+[data-theme="dark"] {
+  --bg-primary: #0f1115;
+  --bg-secondary: #12151c;
+  --bg-accent: #171a21;
+  --bg-dark: #0b0d11;
+
+  --text-primary: #e5e7eb;
+  --text-secondary: #a0a6b0;
+  --text-light: #8b9099;
+
+  --border-light: #262a33;
+  --border-medium: #313645;
+
+  --primary-color: #60a5fa; /* subdued brand blue for dark */
+  --accent-color: #c0c7d1;  /* metallic silver */
+  --accent-color-2: #aeb6c2; /* secondary silver (hover/states) */
+  --accent-color-3: #d5dae1; /* light silver (borders/surfaces) */
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.35);
+  --shadow-md: 0 6px 12px rgba(0,0,0,0.45);
+  --shadow-lg: 0 14px 28px rgba(0,0,0,0.5);
+}
+
 /* ============================================
    Reset and Base Styles
    ============================================ */
@@ -205,7 +229,65 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-sm);
   padding: var(--spacing-sm) 0;
+}
+
+.logo {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-primary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--primary-color);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  position: relative;
+}
+
+.theme-toggle-icon svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--text-primary);
+  transition: opacity 0.3s ease;
+}
+
+.sun-icon {
+  display: none;
+}
+
+.moon-icon {
+  display: block;
+}
+
+.nav-toggle {
+  margin-left: 0;
 }
 
 .logo h1 {
@@ -341,7 +423,7 @@ p {
 }
 
 .hero-text h2 {
-  font-size: var(--font-size-4xl);
+  font-size: clamp(1.75rem, 5.5vw, var(--font-size-4xl));
   margin-bottom: var(--spacing-md);
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
@@ -682,6 +764,18 @@ p {
   }
 }
 
+/* Medium screens - make interests single column for better readability */
+@media (max-width: 640px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+  }
+  
+  .interest-card {
+    max-width: 100%;
+  }
+}
+
 /* Large Desktop */
 @media (min-width: 1200px) {
   .container {
@@ -697,17 +791,41 @@ p {
 
 /* Mobile Navigation */
 @media (max-width: 767px) {
+  /* Mobile header layout ordering to prevent overlaps */
+  .theme-toggle {
+    order: 2;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0.375rem;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-primary);
+  }
+  
+  .theme-toggle-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
   .nav-toggle {
+    order: 3;
     display: flex;
   }
   
+  .logo {
+    order: 1;
+  }
+  
   .nav {
+    order: 4;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-light);
+    padding-top: max(env(safe-area-inset-top), 0px);
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
     transform: translateY(-100%);
     opacity: 0;
     visibility: hidden;
@@ -722,14 +840,30 @@ p {
   
   .nav-list {
     flex-direction: column;
-    padding: var(--spacing-md);
-    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    gap: var(--spacing-sm);
   }
   
   .nav-link {
     display: block;
-    padding: var(--spacing-sm);
+    font-size: 1.125rem;
+    line-height: 1.5;
+    padding: 0.75rem 0;
     border-bottom: 1px solid var(--border-light);
+    letter-spacing: 0.2px;
+  }
+  
+  .nav-link:last-child {
+    border-bottom: none;
+  }
+  
+  /* Reduce section padding on mobile for better content flow */
+  .section {
+    padding: 2.5rem 0;
+  }
+  
+  .contact-card {
+    padding: var(--spacing-xl);
   }
   
   .hero-actions {
@@ -774,6 +908,12 @@ p {
     flex-direction: column;
   }
   
+  /* Full-width buttons on small screens for easier taps */
+  .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+  
   /* Stack interests vertically on very small screens */
   .interests-grid {
     grid-template-columns: 1fr;
@@ -783,6 +923,103 @@ p {
   .interest-card {
     max-width: 100%;
   }
+}
+
+/* ============================================
+   Dark Mode Component Overrides
+   ============================================ */
+
+/* Solid, clean hero background in dark mode */
+[data-theme="dark"] .hero {
+  background: var(--bg-primary);
+}
+
+/* Remove gradient text in dark mode for cleaner typography */
+[data-theme="dark"] .hero-text h2 {
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  color: var(--text-primary);
+}
+
+/* Dark mode card styling with consistent minimal look */
+[data-theme="dark"] .interest-card,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .achievement-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .interest-card:hover,
+[data-theme="dark"] .contact-card:hover,
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .achievement-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Dark mode button styling */
+[data-theme="dark"] .btn-primary {
+  background-color: var(--primary-color);
+  color: var(--bg-dark);
+  border-color: transparent;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-primary:focus {
+  background-color: var(--accent-color-2);
+  color: var(--bg-dark);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .btn-secondary,
+[data-theme="dark"] .btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+[data-theme="dark"] .btn-secondary:hover,
+[data-theme="dark"] .btn-secondary:focus {
+  background-color: var(--bg-accent);
+  border-color: var(--accent-color);
+}
+
+[data-theme="dark"] .btn-outline:hover,
+[data-theme="dark"] .btn-outline:focus {
+  background-color: var(--primary-color);
+  color: var(--bg-dark);
+}
+
+/* Dark mode tags with metallic silver accent */
+[data-theme="dark"] .tag {
+  background-color: #1d222c;
+  color: var(--accent-color);
+  border: 1px solid var(--border-light);
+}
+
+/* Dark mode header styling */
+[data-theme="dark"] .header {
+  background-color: rgba(15, 17, 21, 0.95);
+  border-bottom-color: var(--border-light);
+}
+
+/* Dark mode footer with consistent background */
+[data-theme="dark"] .footer {
+  background-color: var(--bg-dark);
+  border-top: 1px solid var(--border-light);
+}
+
+[data-theme="dark"] .footer a:hover,
+[data-theme="dark"] .footer a:focus {
+  color: var(--accent-color);
+}
+
+/* Focus states with silver accent in dark mode */
+[data-theme="dark"] *:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
 
 /* Focus styles for accessibility */

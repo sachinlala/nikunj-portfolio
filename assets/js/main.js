@@ -25,6 +25,10 @@
         const isExpanded = nav.classList.contains('active');
         navToggle.setAttribute('aria-expanded', isExpanded);
         
+        // Toggle scroll lock and ARIA states
+        document.body.classList.toggle('menu-open', isExpanded);
+        nav.setAttribute('aria-hidden', (!isExpanded).toString());
+        
         // Animate hamburger menu
         navToggle.classList.toggle('active');
       });
@@ -37,6 +41,8 @@
           nav.classList.remove('active');
           navToggle.classList.remove('active');
           navToggle.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('menu-open');
+          nav.setAttribute('aria-hidden', 'true');
         }
       });
     });
@@ -50,6 +56,8 @@
         nav.classList.remove('active');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        nav.setAttribute('aria-hidden', 'true');
       }
     });
   }
@@ -295,6 +303,8 @@
         nav.classList.remove('active');
         navToggle.classList.remove('active');
         navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        nav.setAttribute('aria-hidden', 'true');
       }
     });
   }
@@ -309,8 +319,10 @@
     const savedTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
     
-    // Update toggle button state
+    // Update toggle button state and ARIA attributes
     updateThemeToggleIcon(savedTheme);
+    themeToggle.setAttribute('aria-pressed', savedTheme === 'dark');
+    themeToggle.setAttribute('title', 'Toggle dark mode');
 
     themeToggle.addEventListener('click', function() {
       const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -319,6 +331,7 @@
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       updateThemeToggleIcon(newTheme);
+      themeToggle.setAttribute('aria-pressed', newTheme === 'dark');
       
       console.log(`Switched to ${newTheme} mode`);
     });
@@ -535,6 +548,11 @@ const additionalStyles = `
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   }
 
+  [data-theme="dark"] .header.scrolled {
+    background-color: rgba(15, 17, 21, 0.98);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+
   /* Active navigation link */
   .nav-link.active {
     color: var(--primary-color);
@@ -597,170 +615,9 @@ const additionalStyles = `
     outline-offset: 2px;
   }
 
-  /* Dark Mode Styles */
-  :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8fafc;
-    --text-primary: #1a1a1a;
-    --text-secondary: #666666;
-    --border-color: rgba(0, 0, 0, 0.08);
-    --shadow-light: rgba(0, 0, 0, 0.05);
-    --shadow-medium: rgba(0, 0, 0, 0.1);
-    --primary-color: #3b82f6;
-  }
-
-  [data-theme="dark"] {
-    --bg-primary: #000000;
-    --bg-secondary: #000000;
-    --text-primary: #ffffff;
-    --text-secondary: #cccccc;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-light: rgba(255, 255, 255, 0.05);
-    --shadow-medium: rgba(255, 255, 255, 0.1);
-    --primary-color: #ffffff;
-  }
-
-  [data-theme="dark"] body {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-primary) !important;
-  }
-
-  [data-theme="dark"] .header {
-    background-color: var(--bg-primary) !important;
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  [data-theme="dark"] .header.scrolled {
-    background-color: rgba(0, 0, 0, 0.98) !important;
-    box-shadow: 0 2px 20px var(--shadow-medium);
-  }
-
-  [data-theme="dark"] .interest-card,
-  [data-theme="dark"] .contact-card {
-    background-color: var(--bg-secondary) !important;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px var(--shadow-light);
-  }
-
-  [data-theme="dark"] .interest-card:hover,
-  [data-theme="dark"] .contact-card:hover {
-    box-shadow: 0 8px 15px var(--shadow-medium);
-    background-color: var(--bg-secondary) !important;
-  }
-
-  [data-theme="dark"] .btn {
-    background-color: var(--bg-primary) !important;
-    color: var(--text-primary) !important;
-    border: 2px solid var(--border-color);
-  }
-
-  [data-theme="dark"] .btn:hover {
-    background-color: var(--bg-secondary) !important;
-    border-color: var(--text-primary);
-  }
-
-  [data-theme="dark"] .btn-secondary {
-    background-color: var(--bg-primary) !important;
-    border: 2px solid var(--border-color);
-    color: var(--text-primary) !important;
-  }
-
-  [data-theme="dark"] .footer {
-    background-color: var(--bg-secondary) !important;
-    border-top: 1px solid var(--border-color);
-  }
-
-  [data-theme="dark"] .hero {
-    background-color: var(--bg-primary) !important;
-  }
-
-  [data-theme="dark"] .section {
-    background-color: var(--bg-primary) !important;
-  }
-
-  [data-theme="dark"] main {
-    background-color: var(--bg-primary) !important;
-  }
-
-  [data-theme="dark"] * {
-    border-color: var(--border-color);
-  }
-
-  [data-theme="dark"] a {
-    color: var(--text-primary);
-  }
-
-  [data-theme="dark"] .nav-link:hover {
-    color: var(--text-primary) !important;
-  }
-
-  /* Theme Toggle Button */
-  .theme-toggle {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: 2px solid var(--border-color, rgba(0, 0, 0, 0.08));
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    z-index: 1000;
-  }
-
-  .theme-toggle:hover {
-    background-color: var(--bg-secondary, #f8fafc);
-    border-color: var(--primary-color, #3b82f6);
-  }
-
-  .theme-toggle:focus {
-    outline: 2px solid var(--primary-color, #3b82f6);
-    outline-offset: 2px;
-  }
-
-  .theme-toggle-icon {
-    width: 1.2rem;
-    height: 1.2rem;
-    position: relative;
-  }
-
-  .theme-toggle-icon svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: var(--text-primary, #1a1a1a);
-    transition: opacity 0.3s ease;
-  }
-
-  .sun-icon {
-    display: none;
-  }
-
-  .moon-icon {
-    display: block;
-  }
-
-  /* Responsive adjustments for theme toggle */
-  @media (max-width: 768px) {
-    .theme-toggle {
-      left: 0.5rem;
-      width: 2rem;
-      height: 2rem;
-      padding: 0.375rem;
-    }
-
-    .theme-toggle-icon {
-      width: 1rem;
-      height: 1rem;
-    }
+  /* Scroll lock for mobile menu */
+  body.menu-open {
+    overflow: hidden;
   }
 `;
 
