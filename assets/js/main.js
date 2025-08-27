@@ -337,9 +337,10 @@
       const heroDescription = document.querySelector('.hero-description');
       const profileImg = document.querySelector('.profile-img');
       
-      if (heroTitle && profileData.personal.name) {
-        heroTitle.innerHTML = `Hi, I'm ${profileData.personal.name.split(' ')[0]}! 👋`;
-      }
+      // Keep the static 'About Me' title - don't override it
+      // if (heroTitle && profileData.personal.name) {
+      //   heroTitle.innerHTML = `Hi, I'm ${profileData.personal.name.split(' ')[0]}! 👋`;
+      // }
       
       if (heroDescription && profileData.personal.bio) {
         // Convert \n characters to HTML line breaks
