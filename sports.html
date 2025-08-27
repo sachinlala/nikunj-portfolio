@@ -29,6 +29,19 @@
     <header class="header" id="header">
       <div class="container">
         <div class="header-content">
+          <!-- Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-toggle-icon">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+              </svg>
+            </span>
+          </button>
+
           <div class="logo">
             <h1><a href="index.html" style="text-decoration: none; color: inherit;">Nikunj Arora</a></h1>
             <p>8th Grade Student • Curious Coder & Maker</p>
@@ -75,8 +88,7 @@
           <!-- Football Section -->
           <div class="content-section">
             <div class="sport-highlight">
-              <div class="sport-emoji">⚽</div>
-              <h2>Football - My Main Passion</h2>
+              <h2>Football</h2>
             </div>
             
             <div class="content-text">
@@ -89,8 +101,7 @@
           <!-- Other Sports Section -->
           <div class="content-section">
             <div class="sport-highlight">
-              <div class="sport-emoji">🏆</div>
-              <h2>Other Sports I Enjoy</h2>
+              <h2>Other Sports</h2>
             </div>
             
             <div class="content-text">
@@ -162,10 +173,7 @@
       .page-title {
         font-size: 2.5rem;
         font-weight: 700;
-        background: linear-gradient(135deg, #00a650, #ffffff, #00a650);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        color: var(--text-primary, #1a1a1a);
         margin-bottom: 1rem;
       }
 

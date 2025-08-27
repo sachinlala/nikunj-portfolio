@@ -610,34 +610,34 @@ const additionalStyles = `
   }
 
   [data-theme="dark"] {
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a1a;
+    --bg-primary: #000000;
+    --bg-secondary: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #a1a1aa;
+    --text-secondary: #cccccc;
     --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-light: rgba(0, 0, 0, 0.3);
-    --shadow-medium: rgba(0, 0, 0, 0.5);
-    --primary-color: #60a5fa;
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-medium: rgba(255, 255, 255, 0.1);
+    --primary-color: #ffffff;
   }
 
   [data-theme="dark"] body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
   }
 
   [data-theme="dark"] .header {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-primary) !important;
     border-bottom: 1px solid var(--border-color);
   }
 
   [data-theme="dark"] .header.scrolled {
-    background-color: rgba(15, 15, 15, 0.98);
+    background-color: rgba(0, 0, 0, 0.98) !important;
     box-shadow: 0 2px 20px var(--shadow-medium);
   }
 
   [data-theme="dark"] .interest-card,
   [data-theme="dark"] .contact-card {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary) !important;
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 4px var(--shadow-light);
   }
@@ -645,22 +645,53 @@ const additionalStyles = `
   [data-theme="dark"] .interest-card:hover,
   [data-theme="dark"] .contact-card:hover {
     box-shadow: 0 8px 15px var(--shadow-medium);
+    background-color: var(--bg-secondary) !important;
   }
 
   [data-theme="dark"] .btn {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--bg-primary) !important;
+    color: var(--text-primary) !important;
+    border: 2px solid var(--border-color);
+  }
+
+  [data-theme="dark"] .btn:hover {
+    background-color: var(--bg-secondary) !important;
+    border-color: var(--text-primary);
   }
 
   [data-theme="dark"] .btn-secondary {
-    background-color: transparent;
+    background-color: var(--bg-primary) !important;
     border: 2px solid var(--border-color);
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
   }
 
   [data-theme="dark"] .footer {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-secondary) !important;
     border-top: 1px solid var(--border-color);
+  }
+
+  [data-theme="dark"] .hero {
+    background-color: var(--bg-primary) !important;
+  }
+
+  [data-theme="dark"] .section {
+    background-color: var(--bg-primary) !important;
+  }
+
+  [data-theme="dark"] main {
+    background-color: var(--bg-primary) !important;
+  }
+
+  [data-theme="dark"] * {
+    border-color: var(--border-color);
+  }
+
+  [data-theme="dark"] a {
+    color: var(--text-primary);
+  }
+
+  [data-theme="dark"] .nav-link:hover {
+    color: var(--text-primary) !important;
   }
 
   /* Theme Toggle Button */
