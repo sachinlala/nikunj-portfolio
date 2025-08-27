@@ -175,7 +175,7 @@
 
       // Observe elements that should animate in
       const animateElements = document.querySelectorAll(
-        '.project-card, .achievement-card, .interest-card, .contact-card'
+        '.interest-card, .contact-card'
       );
       
       animateElements.forEach(function(element) {
@@ -455,8 +455,6 @@
 // ============================================
 const additionalStyles = `
   /* Animation classes for scroll effects */
-  .project-card,
-  .achievement-card,
   .interest-card,
   .contact-card {
     opacity: 0;
@@ -464,8 +462,6 @@ const additionalStyles = `
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
 
-  .project-card.animate-in,
-  .achievement-card.animate-in,
   .interest-card.animate-in,
   .contact-card.animate-in {
     opacity: 1;
