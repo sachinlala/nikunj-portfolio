@@ -513,6 +513,41 @@ const additionalStyles = `
   .skip-to-content:focus {
     top: 6px;
   }
+
+  /* Clickable interest card styles */
+  .interest-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .interest-card-link:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    color: inherit;
+  }
+
+  .card-link-indicator {
+    font-size: 0.85rem;
+    color: var(--primary-color, #3b82f6);
+    font-weight: 500;
+    margin-top: 1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+  }
+
+  .interest-card-link:hover .card-link-indicator {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .interest-card-link:focus {
+    outline: 2px solid var(--primary-color, #3b82f6);
+    outline-offset: 2px;
+  }
 `;
 
 // Inject additional styles
