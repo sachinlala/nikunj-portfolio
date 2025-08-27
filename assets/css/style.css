@@ -539,6 +539,14 @@ p {
   margin-bottom: var(--spacing-md);
 }
 
+.interest-image {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin: 0 auto;
+}
+
 .interest-card h3 {
   margin-bottom: var(--spacing-sm);
   color: var(--text-primary);
