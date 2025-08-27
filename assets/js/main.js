@@ -11,6 +11,7 @@
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('.nav-link');
   const header = document.getElementById('header');
+  const themeToggle = document.getElementById('theme-toggle');
 
   // ============================================
   // Mobile Navigation Toggle
@@ -299,6 +300,52 @@
   }
 
   // ============================================
+  // Dark Mode Toggle
+  // ============================================
+  function initDarkModeToggle() {
+    if (!themeToggle) return;
+
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    // Update toggle button state
+    updateThemeToggleIcon(savedTheme);
+
+    themeToggle.addEventListener('click', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeToggleIcon(newTheme);
+      
+      console.log(`Switched to ${newTheme} mode`);
+    });
+
+    // Keyboard support for theme toggle
+    themeToggle.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        themeToggle.click();
+      }
+    });
+  }
+
+  function updateThemeToggleIcon(theme) {
+    const sunIcon = themeToggle.querySelector('.sun-icon');
+    const moonIcon = themeToggle.querySelector('.moon-icon');
+    
+    if (theme === 'dark') {
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    } else {
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    }
+  }
+
+  // ============================================
   // Performance Optimizations
   // ============================================
   function throttle(func, wait) {
@@ -436,6 +483,7 @@
     initScrollAnimations();
     initContactForm();
     initKeyboardNavigation();
+    initDarkModeToggle();
 
     // Add loaded class to body for any CSS animations
     document.body.classList.add('loaded');
@@ -547,6 +595,141 @@ const additionalStyles = `
   .interest-card-link:focus {
     outline: 2px solid var(--primary-color, #3b82f6);
     outline-offset: 2px;
+  }
+
+  /* Dark Mode Styles */
+  :root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --border-color: rgba(0, 0, 0, 0.08);
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --primary-color: #3b82f6;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-light: rgba(0, 0, 0, 0.3);
+    --shadow-medium: rgba(0, 0, 0, 0.5);
+    --primary-color: #60a5fa;
+  }
+
+  [data-theme="dark"] body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+
+  [data-theme="dark"] .header {
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  [data-theme="dark"] .header.scrolled {
+    background-color: rgba(15, 15, 15, 0.98);
+    box-shadow: 0 2px 20px var(--shadow-medium);
+  }
+
+  [data-theme="dark"] .interest-card,
+  [data-theme="dark"] .contact-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px var(--shadow-light);
+  }
+
+  [data-theme="dark"] .interest-card:hover,
+  [data-theme="dark"] .contact-card:hover {
+    box-shadow: 0 8px 15px var(--shadow-medium);
+  }
+
+  [data-theme="dark"] .btn {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  [data-theme="dark"] .btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--text-primary);
+  }
+
+  [data-theme="dark"] .footer {
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Theme Toggle Button */
+  .theme-toggle {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: 2px solid var(--border-color, rgba(0, 0, 0, 0.08));
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    z-index: 1000;
+  }
+
+  .theme-toggle:hover {
+    background-color: var(--bg-secondary, #f8fafc);
+    border-color: var(--primary-color, #3b82f6);
+  }
+
+  .theme-toggle:focus {
+    outline: 2px solid var(--primary-color, #3b82f6);
+    outline-offset: 2px;
+  }
+
+  .theme-toggle-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: relative;
+  }
+
+  .theme-toggle-icon svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--text-primary, #1a1a1a);
+    transition: opacity 0.3s ease;
+  }
+
+  .sun-icon {
+    display: none;
+  }
+
+  .moon-icon {
+    display: block;
+  }
+
+  /* Responsive adjustments for theme toggle */
+  @media (max-width: 768px) {
+    .theme-toggle {
+      left: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+      padding: 0.375rem;
+    }
+
+    .theme-toggle-icon {
+      width: 1rem;
+      height: 1rem;
+    }
   }
 `;
 
