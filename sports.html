@@ -75,69 +75,29 @@
 
           <!-- Football Section -->
           <div class="content-section">
-            <div class="content-card">
-              <div class="sport-highlight">
-                <div class="sport-emoji">🏈</div>
-                <h2>Football - My Main Passion</h2>
-              </div>
-              
-              <div class="content-text">
-                <p>
-                  I am passionate about football, which has always been my main sport, while also enjoying few other sports that keep me active. Football keeps me competitive and disciplined, and it has taught me the value of teamwork, leadership, and resilience. Beyond the game itself, football helps me grow as a person by pushing me to stay focused, improve constantly, and overcome challenges both on and off the field.
-                </p>
-              </div>
+            <div class="sport-highlight">
+              <div class="sport-emoji">⚽</div>
+              <h2>Football - My Main Passion</h2>
+            </div>
+            
+            <div class="content-text">
+              <p>
+                I am passionate about football, which has always been my main sport, while also enjoying few other sports that keep me active. Football keeps me competitive and disciplined, and it has taught me the value of teamwork, leadership, and resilience. Beyond the game itself, football helps me grow as a person by pushing me to stay focused, improve constantly, and overcome challenges both on and off the field.
+              </p>
             </div>
           </div>
 
           <!-- Other Sports Section -->
           <div class="content-section">
-            <div class="content-card">
-              <div class="sport-highlight">
-                <div class="sport-emoji">🏆</div>
-                <h2>Other Sports I Enjoy</h2>
-              </div>
-              
-              <div class="content-text">
-                <p>
-                  I have had an experience of other sports like cricket, table-tennis, and chess. Playing these sports gives me something unique. Cricket helps me stay patient and strategic, table-tennis improves my reflexes and focus, while chess sharpens my mind and teaches me to think ahead. Playing other sports builds a balance between physical fitness and mental growth, making me a better and more well-rounded player.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sports Grid -->
-          <div class="sports-grid">
-            <div class="sport-card">
-              <div class="sport-icon-large">🏏</div>
-              <h3>Cricket</h3>
-              <p>Builds patience and strategic thinking</p>
+            <div class="sport-highlight">
+              <div class="sport-emoji">🏆</div>
+              <h2>Other Sports I Enjoy</h2>
             </div>
             
-            <div class="sport-card">
-              <div class="sport-icon-large">🏓</div>
-              <h3>Table Tennis</h3>
-              <p>Improves reflexes and focus</p>
-            </div>
-            
-            <div class="sport-card">
-              <div class="sport-icon-large">♟️</div>
-              <h3>Chess</h3>
-              <p>Sharpens mind and forward thinking</p>
-            </div>
-            
-            <div class="sport-card">
-              <div class="sport-icon-large">⚽</div>
-              <h3>Football</h3>
-              <p>Develops teamwork and leadership</p>
-            </div>
-          </div>
-
-          <!-- Call to Action -->
-          <div class="cta-section">
-            <div class="cta-card">
-              <h3>Want to Connect?</h3>
-              <p>I'd love to chat about sports, training, or share experiences!</p>
-              <a href="index.html#contact" class="btn btn-primary">Get In Touch</a>
+            <div class="content-text">
+              <p>
+                I have had an experience of other sports like cricket, table-tennis, and chess. Playing these sports gives me something unique. Cricket helps me stay patient and strategic, table-tennis improves my reflexes and focus, while chess sharpens my mind and teaches me to think ahead. Playing other sports builds a balance between physical fitness and mental growth, making me a better and more well-rounded player.
+              </p>
             </div>
           </div>
         </div>
@@ -215,117 +175,42 @@
       }
 
       .content-section {
-        margin-bottom: 3rem;
-      }
-
-      .content-card {
-        background: white;
-        border-radius: 1rem;
-        padding: 2rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(0, 0, 0, 0.08);
+        margin-bottom: 4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .sport-highlight {
         display: flex;
         align-items: center;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        justify-content: center;
       }
 
       .sport-emoji {
-        font-size: 2rem;
+        font-size: 2.5rem;
         margin-right: 1rem;
       }
 
       .sport-highlight h2 {
         color: var(--primary-color, #3b82f6);
-        font-size: 1.8rem;
+        font-size: 2rem;
         font-weight: 600;
         margin: 0;
       }
 
+      .content-text {
+        text-align: center;
+      }
+
       .content-text p {
-        font-size: 1.1rem;
-        line-height: 1.7;
+        font-size: 1.2rem;
+        line-height: 1.8;
         color: var(--text-primary, #333);
         margin: 0;
       }
 
-      .sports-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 1.5rem;
-        margin: 3rem 0;
-      }
-
-      .sport-card {
-        background: white;
-        border-radius: 1rem;
-        padding: 1.5rem;
-        text-align: center;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .sport-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .sport-icon-large {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .sport-card h3 {
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--text-primary, #1a1a1a);
-        margin-bottom: 0.5rem;
-      }
-
-      .sport-card p {
-        color: var(--text-secondary, #666);
-        font-size: 0.95rem;
-        margin: 0;
-      }
-
-      .cta-section {
-        margin-top: 4rem;
-      }
-
-      .cta-card {
-        background: linear-gradient(135deg, var(--primary-color, #3b82f6), var(--primary-color-dark, #2563eb));
-        color: white;
-        border-radius: 1rem;
-        padding: 2.5rem;
-        text-align: center;
-      }
-
-      .cta-card h3 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      .cta-card p {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-        opacity: 0.9;
-      }
-
-      .cta-card .btn {
-        background: white;
-        color: var(--primary-color, #3b82f6);
-        border: none;
-        font-weight: 600;
-      }
-
-      .cta-card .btn:hover {
-        background: rgba(255, 255, 255, 0.9);
-        transform: translateY(-2px);
-      }
 
       /* Mobile Responsiveness */
       @media (max-width: 768px) {
@@ -335,10 +220,6 @@
 
         .page-subtitle {
           font-size: 1rem;
-        }
-
-        .content-card {
-          padding: 1.5rem;
         }
 
         .sport-highlight {
@@ -351,13 +232,8 @@
           margin-top: 0.5rem;
         }
 
-        .sports-grid {
-          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-          gap: 1rem;
-        }
-
-        .cta-card {
-          padding: 2rem;
+        .content-text p {
+          font-size: 1.1rem;
         }
       }
     </style>
