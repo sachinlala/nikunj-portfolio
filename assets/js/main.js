@@ -1,5 +1,6 @@
 // ============================================
 // Main Portfolio JavaScript
+// Updated: 2025-01-27 09:52 UTC - Interactive Features
 // ============================================
 
 (function() {
