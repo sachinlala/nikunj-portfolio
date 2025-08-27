@@ -597,36 +597,27 @@ const additionalStyles = `
     outline-offset: 2px;
   }
 
-  /* Nike-Inspired Metallic Dark Theme */
+  /* Dark Mode Styles */
   :root {
     --bg-primary: #ffffff;
-    --bg-secondary: #f7f7f7;
-    --text-primary: #111111;
-    --text-secondary: #757575;
+    --bg-secondary: #f8fafc;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
     --border-color: rgba(0, 0, 0, 0.08);
     --shadow-light: rgba(0, 0, 0, 0.05);
     --shadow-medium: rgba(0, 0, 0, 0.1);
-    --primary-color: #111111;
-    --accent-color: #ff6b00;
-    --metallic-gradient: linear-gradient(135deg, #2d3748, #4a5568, #718096);
-    --metallic-text: linear-gradient(135deg, #e2e8f0, #cbd5e0, #a0aec0);
+    --primary-color: #3b82f6;
   }
 
   [data-theme="dark"] {
-    --bg-primary: #0d0d0d;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #2d2d30;
-    --text-primary: #f7fafc;
-    --text-secondary: #e2e8f0;
-    --text-accent: #ffd700;
+    --bg-primary: #000000;
+    --bg-secondary: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
     --border-color: rgba(255, 255, 255, 0.1);
-    --shadow-light: rgba(0, 0, 0, 0.3);
-    --shadow-medium: rgba(0, 0, 0, 0.5);
-    --primary-color: #ffd700;
-    --accent-color: #ff6b00;
-    --metallic-gradient: linear-gradient(135deg, #2d3748, #4a5568, #ffd700);
-    --metallic-text: linear-gradient(135deg, #ffd700, #f6e05e, #ecc94b);
-    --nike-gradient: linear-gradient(135deg, #1a1a1a, #2d2d30, #ffd700);
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-medium: rgba(255, 255, 255, 0.1);
+    --primary-color: #ffffff;
   }
 
   [data-theme="dark"] body {
@@ -757,225 +748,6 @@ const additionalStyles = `
     display: block;
   }
 
-  /* Nike-Inspired Design Enhancements */
-  
-  /* Light Theme Enhancements */
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-  }
-
-  .header {
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
-  }
-
-  .logo h1 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: -0.02em;
-  }
-
-  .nav-link {
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width 0.3s ease;
-  }
-
-  .nav-link:hover::after {
-    width: 100%;
-  }
-
-  .btn {
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    border-radius: 2rem;
-    padding: 0.875rem 2rem;
-    border: 2px solid var(--primary-color);
-    background: var(--primary-color);
-    color: white;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-size: 0.875rem;
-  }
-
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  .btn-secondary {
-    background: transparent;
-    color: var(--primary-color);
-  }
-
-  .btn-secondary:hover {
-    background: var(--primary-color);
-    color: white;
-  }
-
-  .interest-card,
-  .contact-card {
-    border-radius: 1rem;
-    border: 1px solid var(--border-color);
-    background: var(--bg-primary);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .interest-card::before,
-  .contact-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transition: left 0.6s ease;
-  }
-
-  .interest-card:hover::before,
-  .contact-card:hover::before {
-    left: 100%;
-  }
-
-  .interest-card:hover,
-  .contact-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-
-  .section-title {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    font-size: 2.5rem;
-  }
-
-  /* Dark Theme Nike-Style Enhancements */
-  [data-theme="dark"] .header {
-    background: var(--nike-gradient) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
-
-  [data-theme="dark"] .logo h1 {
-    background: var(--metallic-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 800;
-  }
-
-  [data-theme="dark"] .section-title {
-    background: var(--metallic-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  [data-theme="dark"] .hero-text h2 {
-    background: var(--metallic-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  [data-theme="dark"] .interest-card,
-  [data-theme="dark"] .contact-card {
-    background: var(--nike-gradient) !important;
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.1);
-  }
-
-  [data-theme="dark"] .interest-card::before,
-  [data-theme="dark"] .contact-card::before {
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
-  }
-
-  [data-theme="dark"] .interest-card:hover,
-  [data-theme="dark"] .contact-card:hover {
-    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
-    border-color: var(--text-accent);
-  }
-
-  [data-theme="dark"] .btn {
-    background: var(--metallic-gradient) !important;
-    border: 2px solid var(--text-accent) !important;
-    color: var(--bg-primary) !important;
-    font-weight: 700;
-    text-shadow: none;
-  }
-
-  [data-theme="dark"] .btn:hover {
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
-    border-color: var(--text-accent) !important;
-  }
-
-  [data-theme="dark"] .btn-secondary {
-    background: transparent !important;
-    color: var(--text-accent) !important;
-  }
-
-  [data-theme="dark"] .btn-secondary:hover {
-    background: var(--text-accent) !important;
-    color: var(--bg-primary) !important;
-  }
-
-  [data-theme="dark"] .footer {
-    background: var(--nike-gradient) !important;
-    border-top: 1px solid rgba(255, 215, 0, 0.2);
-  }
-
-  [data-theme="dark"] .nav-link::after {
-    background: var(--text-accent);
-  }
-
-  [data-theme="dark"] .theme-toggle {
-    border-color: var(--text-accent);
-    background: rgba(255, 215, 0, 0.1);
-  }
-
-  [data-theme="dark"] .theme-toggle:hover {
-    background: var(--text-accent) !important;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-  }
-
-  [data-theme="dark"] .theme-toggle:hover svg {
-    color: var(--bg-primary);
-  }
-
-  /* Sports page specific styling */
-  [data-theme="dark"] .sport-highlight h2 {
-    background: var(--metallic-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  [data-theme="dark"] .page-title {
-    background: var(--metallic-text);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
   /* Responsive adjustments for theme toggle */
   @media (max-width: 768px) {
     .theme-toggle {
@@ -989,33 +761,6 @@ const additionalStyles = `
       width: 1rem;
       height: 1rem;
     }
-
-    .section-title {
-      font-size: 2rem;
-    }
-
-    .btn {
-      padding: 0.75rem 1.5rem;
-      font-size: 0.8rem;
-    }
-  }
-
-  /* Additional Nike-style micro-interactions */
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  .header-content {
-    position: relative;
-  }
-
-  [data-theme="dark"] body {
-    background: radial-gradient(ellipse at top, #1a1a1a, #0d0d0d) !important;
-  }
-
-  [data-theme="dark"] .hero {
-    background: radial-gradient(ellipse at center, #1a1a1a, #0d0d0d) !important;
   }
 `;
 
