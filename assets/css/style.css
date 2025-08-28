@@ -1023,8 +1023,12 @@ p {
 }
 
 /* Dark mode interest image border fix */
+/* Use a negative outline-offset to draw an inner black edge that hides any white edge baked into the JPG */
 [data-theme="dark"] .interest-image {
-  border: 2px solid var(--bg-dark);
+  outline: 3px solid var(--bg-primary);
+  outline-offset: -3px;
+  border-radius: var(--radius-sm);
+  display: block;
 }
 
 /* Focus styles for accessibility */
