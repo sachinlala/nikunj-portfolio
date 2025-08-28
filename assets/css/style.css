@@ -1022,13 +1022,16 @@ p {
   outline-offset: 2px;
 }
 
-/* Dark mode interest image border fix */
-/* Use a negative outline-offset to draw an inner black edge that hides any white edge baked into the JPG */
+/* Dark mode interest image background fix */
+/* Add black background and mask white edges for lego icon in dark mode */
 [data-theme="dark"] .interest-image {
-  outline: 3px solid var(--bg-primary);
-  outline-offset: -3px;
+  background-color: var(--bg-primary);
+  outline: 2px solid var(--bg-primary);
+  outline-offset: -2px;
   border-radius: var(--radius-sm);
   display: block;
+  /* Use mix-blend-mode to make white areas transparent/dark */
+  mix-blend-mode: multiply;
 }
 
 /* Focus styles for accessibility */
