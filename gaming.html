@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaming - Nikunj Arora</title>
+    <meta
+      name="description"
+      content="Nikunj Arora's passion for gaming including F1 25, FC 25, Cricket 24, and Fortnite. Explore different worlds and challenges through competitive and creative gaming experiences."
+    />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header-content">
+          <!-- Dark Mode Toggle -->
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+            <span class="theme-toggle-icon">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+              </svg>
+            </span>
+          </button>
+
+          <div class="logo">
+            <h1><a href="index.html" style="text-decoration: none; color: inherit;">Nikunj Arora</a></h1>
+            <p>8th Grade Student • Curious Coder & Maker</p>
+          </div>
+          
+          <!-- Navigation -->
+          <nav class="nav" id="nav">
+            <ul class="nav-list">
+              <li><a href="index.html#about" class="nav-link">About</a></li>
+              <li><a href="index.html#interests" class="nav-link">Interests</a></li>
+              <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+              <li><a href="index.html" class="nav-link">← Back to Portfolio</a></li>
+            </ul>
+          </nav>
+          
+          <!-- Mobile menu toggle -->
+          <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Gaming Content Section -->
+      <section class="section gaming-detail" id="gaming">
+        <div class="container">
+          <!-- Back Button -->
+          <div class="back-navigation">
+            <a href="index.html" class="back-link">
+              <span class="back-icon">←</span>
+              Back to Portfolio
+            </a>
+          </div>
+
+          <!-- Page Header -->
+          <div class="page-header">
+            <div class="game-icon">🎮</div>
+            <h1 class="page-title">Gaming</h1>
+            <p class="page-subtitle">Exploring different worlds through competitive and creative gaming</p>
+          </div>
+
+          <!-- Gaming Content Section -->
+          <div class="content-section">
+            <div class="content-text">
+              <p>
+                Gaming is another passion of mine where I get to explore different worlds and challenges. Whether I'm racing in F1 25, scoring goals in FC 25, scoring runs in Cricket 24, or battling it out in Fortnite, every game brings a new thrill. For me, gaming is all about the mix of fun, competition, and creativity—it's like stepping into a whole new arena each time I play.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; <span id="current-year">2025</span> Nikunj Arora. Built with passion and curiosity.</p>
+          <p>
+            <a href="https://github.com/sachinlala/nikunj-portfolio" target="_blank">
+              View this project on GitHub
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Additional CSS for Gaming Page -->
+    <style>
+      .gaming-detail {
+        padding-top: 2rem;
+        min-height: 100vh;
+      }
+
+      .back-navigation {
+        margin-bottom: 2rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .back-link:hover {
+        color: var(--primary-color-dark, #2563eb);
+      }
+
+      .back-icon {
+        margin-right: 0.5rem;
+        font-size: 1.2em;
+      }
+
+      .page-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .game-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+
+      .page-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-primary, #1a1a1a);
+        margin-bottom: 1rem;
+      }
+
+      .page-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary, #666);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .content-section {
+        margin-bottom: 4rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .content-text {
+        text-align: center;
+      }
+
+      .content-text p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: var(--text-primary, #333);
+        margin: 0;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .page-title {
+          font-size: 2rem;
+        }
+
+        .page-subtitle {
+          font-size: 1rem;
+        }
+
+        .game-icon {
+          font-size: 3rem;
+        }
+
+        .content-text p {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+  </body>
+</html>
